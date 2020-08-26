@@ -121,10 +121,38 @@ class Person2 {
   static addNumbers(x, y) {
     return x + y
   }
-
 }
 
 const rae = new Person2('Raegan', 'Santamaria', 25);
 console.log(rae)
 console.log(rae.addWeight(2));
 console.log(Person2.addNumbers(1,2)) //using static method. rae.addNumbers does not work
+
+//////////////////////////////////////////////////////////////////////////////////
+// ES6 Inheritance, aka Subclasses
+class Person3 {
+  constructor(firstName, lastName) {
+    this.firstName = firstName,
+    this.lastName = lastName
+  }
+
+  greeting() {
+    return `Hi ${this.firstName} ${this.lastName}`;
+  }
+}
+  class Customer2 extends Person3 {
+    constructor(firstName, lastName, phone, membership) {
+      super(firstName, lastName); // inheriting from Person3
+      // must define this because not defined in the person
+      this.phone = phone;
+      this.membership = membership;
+    }
+    static getMembershipCost() {
+      return '500'
+    }
+  }
+
+  const john = new Customer2('John', 'Doe', '555-555-5555', 'Pro');
+  console.log(john)
+  console.log(john.greeting()); //accessing the method from Person3, which Customer2 inherited from
+  console.log(Customer2.getMembershipCost()); //using static method
