@@ -73,3 +73,31 @@ console.log(customer1.greeting()) //this only works because we inheirited from l
 //////////////////////////////////////////////////////////////////////////////////
 
 // Using Object.create
+// Another, easier way to create objects
+
+const personPrototypes = {
+  greeting: function() {
+    return `Hello there ${this.firstName} ${this.lastName}`;
+  },
+  getsMarried: function(newLastName) {
+    this.lastName = newLastName;
+  }
+}
+
+const mary = Object.create(personPrototypes)
+//add properties
+mary.firstName = 'Mary'
+mary.lastName = 'Willams'
+mary.age = 30
+mary.getsMarried('Thompson')
+console.log(mary.greeting()) //logs 'Hello there Mary Williams
+
+// a different syntax with second param of an object
+const brad = Object.create(personPrototypes, {
+  firstName: {value: 'Brad'},
+  lastName: {value: 'Traversy'},
+  age: {value: 36}
+});
+console.log(brad);
+console.log(brad.greeting());
+
