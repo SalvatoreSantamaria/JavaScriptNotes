@@ -1,4 +1,5 @@
 //TO RUN: Right Click + "Run Code"
+// Notes from https://www.udemy.com/course/modern-javascript-from-the-beginning
 
 // Object Literal
 const dog = {
@@ -101,3 +102,29 @@ const brad = Object.create(personPrototypes, {
 console.log(brad);
 console.log(brad.greeting());
 
+//////////////////////////////////////////////////////////////////////////////////
+// ES6 Classes
+
+class Person2 {
+  constructor(firstName, lastName, weight) {
+    this.firstName = firstName,
+    this.lastName = lastName,
+    this.weight = weight
+  }
+  greeting() {
+    return `Hello there ${this.firstName} ${this.lastName}`;
+  }
+  addWeight(n) {
+    return this.weight + n
+  }
+  //static method
+  static addNumbers(x, y) {
+    return x + y
+  }
+
+}
+
+const rae = new Person2('Raegan', 'Santamaria', 25);
+console.log(rae)
+console.log(rae.addWeight(2));
+console.log(Person2.addNumbers(1,2)) //using static method. rae.addNumbers does not work
