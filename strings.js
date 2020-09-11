@@ -20,3 +20,31 @@ function replaceVowel(word){
 	const vowels = {'a': 1, 'e': 2, 'i': 3, 'o': 4, 'u': 5};
   	return [...word].map(i => i in vowels ? vowels[i] : i).join('');
 }
+
+
+// The wanted word is in lowercase.
+// The crowd of letters is all in uppercase.
+// Note that the word will be spread out amongst the random letters, but their letters remain in the same order.
+// detectWord("UcUNFYGaFYFYGtNUH") ➞ "cat"
+function detectWord(str) {
+	let wanted = ""
+	for(let letter of str){
+		if (letter === letter.toLowerCase()){
+			wanted = wanted + letter
+		}
+	}
+	return wanted
+}
+
+// Create a function that takes a string. If the string is all uppercase characters, convert it to lowercase and add an exclamation mark at the end.
+// normalize("CAPS LOCK DAY IS OVER") ➞ "Caps lock day is over!"
+function normalize(str) {
+	let result = [];
+	if (str === str.toUpperCase()) {
+		result = str.toLowerCase() + '!'
+		return(result.charAt(0).toUpperCase() + result.slice(1))
+	} else {
+		return str
+	}
+} 
+
