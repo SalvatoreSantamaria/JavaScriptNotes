@@ -48,3 +48,32 @@ function normalize(str) {
 	}
 } 
 
+// We delete the following characters from our two strings to turn them into anagrams of each other:
+// Remove d and e from cde to get c.
+// Remove a and b from abc to get c.
+// We must delete  characters to make both strings anagrams, so we print  on a new line.
+function makeAnagram(a, b) {
+	a = a.split('')
+	b = b.split('')
+	let count = 0
+	let obj2 = {}
+
+	for (let i of b) {
+			if (!obj2[i]) {
+					obj2[i] = 1
+			} else {
+					obj2[i]++
+			}
+	}
+
+	for (let i of a) {
+		if (obj2[i] && obj2[i] > 0) {
+			obj2[i]--
+			count++
+		}
+	}
+
+	let diff_of_smaller = (a.length - count)
+	let diff_of_larger = (b.length - a.length)
+	return (2 * diff_of_smaller) + diff_of_larger
+}
