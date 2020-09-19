@@ -77,3 +77,21 @@ function makeAnagram(a, b) {
 	let diff_of_larger = (b.length - a.length)
 	return (2 * diff_of_smaller) + diff_of_larger
 }
+
+// PART I
+// Given a string of alphabetical characters, such as "aabbbccaaa",
+// write a function called compress that takes that string and returns a compressed version
+// containing each character and its count, i.e. "a2b3c2a3"
+function compress(str) {
+	let result = '';
+	let count = 0;
+	for (let i = 0; i < str.length; i++) {
+		count++;
+		// if i isn't the same as i + 1, add the letter and the count to the result str, and reset the counter
+		if (str[i] != str[i + 1]) {
+			result += str[i] + count; 
+			count = 0;
+		} 
+	}
+	console.log(result)
+}
