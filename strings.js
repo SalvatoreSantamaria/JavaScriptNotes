@@ -95,3 +95,37 @@ function compress(str) {
 	}
 	console.log(result)
 }
+
+
+
+
+/////
+function initializeLibrary(bookTitles) { //bookTitles is an array of strings
+  if (!Array.isArray(bookTitles) || bookTitles.length < 1) {
+    throw new Error('Invalid input: bookTitles should be an array of at least one element');
+  }
+let obj = {} 
+for (let i of bookTitles) {
+    if (!obj[i]) {
+        obj[i] = 1
+    }
+}
+console.log(obj)
+
+return requestBook(title)
+
+    for (let i of obj) {
+        if (i == title)  {
+            obj[i] == 0
+        }
+    }
+    console.log(obj)
+
+      
+
+      // return integer with titles that haven't been requested yet
+      
+  
+}
+
+module.exports = { initializeLibrary };
