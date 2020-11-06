@@ -49,7 +49,6 @@ function threesFives(num){
 	}
 	return result;
 }
-
 threesFives(10);
 
 // Given a numerical array, reverse the order of values, in-place without using .reverse()
