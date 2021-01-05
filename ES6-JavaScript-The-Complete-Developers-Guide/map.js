@@ -1,4 +1,4 @@
-//Map returns new array
+//Map returns new array of items
 
 let numbers = [1,2,3,4]
 

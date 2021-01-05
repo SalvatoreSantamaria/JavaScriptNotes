@@ -1,3 +1,5 @@
+//Iterates over every item
+
 let letters = ['a', 'b', 'c']
 
 letters.forEach((i) => {
