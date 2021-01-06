@@ -67,7 +67,7 @@ console.log(isLessThan100)
 //runs function on each item in array
 const total = items.reduce((currentTotal, x) => { //have to include param for each iteration
   return x.price + currentTotal
-}, 0) //have to include starting index
+}, 0) //have to include starting index- which is what currentTotal will be set to (can be array, obj, etc)
 console.log(total)
 // 378
 
