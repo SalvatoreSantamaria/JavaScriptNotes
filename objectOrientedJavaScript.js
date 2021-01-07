@@ -24,7 +24,7 @@ console.log(pet.someFunction(10))
 
 //////////////////////////////////////////////////////////////////////////////////
 
-// Prototypes
+// Prototypes OLD
 // All objects inhereit methods from their prototype
 // object literals: Object.protoype 
 // if the object comes from a constructor like Dog above, then inheirits from Dog.prototype
