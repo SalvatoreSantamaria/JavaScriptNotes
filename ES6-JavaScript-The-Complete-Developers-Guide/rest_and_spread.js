@@ -1,5 +1,14 @@
 //REST ...rest used when we want to capture a list
 
+// add elements to an array
+arr1 = [1,2,3,4]
+arr2 = [5,6,7,8]
+arr1 = [1,2,3,4, ...arr2]
+console.log(arr1)  //logs [1, 2, 3, 4, 5, 6, 7, 8]
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 function addNumbers(num) {
   return num.reduce((sum, n)=> {
     return sum += n
@@ -7,7 +16,7 @@ function addNumbers(num) {
 }
 console.log(addNumbers([1,2,3,4,5,6,7,8,9]))
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+///
 
 function addNumbersNoArray(...num) {
   return num.reduce((sum, n)=> {

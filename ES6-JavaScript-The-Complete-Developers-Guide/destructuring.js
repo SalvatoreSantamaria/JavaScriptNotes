@@ -48,3 +48,11 @@ function someFunction({prop3, prop1, prop2}) { //by using desstructuring I don't
 }
 someFunction(anotherObject) //just pass in the object instead of someFunction('firstProp', 'arg2', 'randomName')
 
+//////////////////////////////////////////////////////////////////////////////////////////
+
+function sumAndMultiply(a,b) {
+  return [a+b, a*b]
+}
+const [sum, multiply] = sumAndMultiply(2,3)
+console.log(sum) //this is a+b, the first item in the return
+console.log(multiply) // this is a*b, the second item in the return
