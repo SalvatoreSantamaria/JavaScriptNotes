@@ -1,4 +1,4 @@
-//for arrays
+//for iterable objects
 
 const letters = ['a', 'b', 'c', 'd']
 

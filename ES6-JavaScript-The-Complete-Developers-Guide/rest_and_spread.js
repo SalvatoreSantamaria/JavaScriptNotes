@@ -34,3 +34,29 @@ let spreaded = [...colors1, ...colors2] //does same thing as above
 // let spreaded = ['purple', ...colors1, ...colors2] //also can add in new elements
 console.log(concated)
 console.log(spreaded)
+
+
+//SPREAD in a function
+let print = (...args) => {
+  let test = [1, ...args, 4]
+  console.log(test) //logs [1,2,3,4]
+}
+print(2, 3)
+
+//SPREAD splitting a string.
+const str = 'a string'
+//both do the same thing
+const chars = [...str]
+console.log(chars)     //logs ['a', ' ', 's', 't', 'r', 'i', 'n', 'g' ]
+splitStr = str.split('')
+console.log(splitStr)  //logs ['a', ' ', 's', 't', 'r', 'i', 'n', 'g' ]
+
+//SPREAD other examples
+const numbers = [1,2,3,4]
+const max = Math.max(...numbers)
+console.log(max) //logs 4
+
+
+let add = (a, b) => { return a + b }
+let arr = [1, 2]
+console.log(add(...arr)) // returns 3

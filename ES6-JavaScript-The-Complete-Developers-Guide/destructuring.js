@@ -22,6 +22,21 @@ function expenseSummary({ type, amount }) {
 }
 expenseSummary(expense)
 
+//exanple 2
+let x = () => {
+  return {
+    name: 'Kuma',
+    address: '123 Fake St',
+    age: 10, 
+    weight: '12 lbs'
+  }
+}
+
+const {name, address} = x()
+console.log(name) //logs Kuma
+console.log(address) //logs 123 Fake St
+
+
 //Arrays: pull off elements //////////////////////////////////////////////////////////////////////////////////////////
 const arr = ['a', 'b', 'c', 'd', 'e', 'f']
 const [ letter1, letter2 ] = arr
@@ -56,3 +71,17 @@ function sumAndMultiply(a,b) {
 const [sum, multiply] = sumAndMultiply(2,3)
 console.log(sum) //this is a+b, the first item in the return
 console.log(multiply) // this is a*b, the second item in the return
+
+// Array Matching as input parameters //////////////////////////////////////////////////////////////////////////////////////////
+let isOn = false;
+let total = 0;
+
+// correct convension is: let configFunction = ([_isOn, _amount]) => {
+let configFunction = ([a, b]) => {
+  isOn = a;
+  total = b;
+}
+configFunction([true, 100])
+console.log(isOn) // logs true
+console.log(total) //logs 100
+
