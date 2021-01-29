@@ -5,9 +5,9 @@ let list = ['puff', 'jerk', 'dumbass']
 const isProfane = (profanity_list, test_input) => {
     return profanity_list.filter(word => {
       const regExp = new RegExp(`(\\b|_)${word.replace(/(\W)/g, '\\$1')}(\\b|_)`, 'gi')
-      console.log(regExp.test(test_input))
+      ///console.log(regExp.test(test_input))returning false
       return regExp.test(test_input)
-    }).length
+    }).length //returns either 0, or 1(if true)
   }
 
 
