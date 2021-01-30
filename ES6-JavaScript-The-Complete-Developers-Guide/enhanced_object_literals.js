@@ -3,6 +3,31 @@
 //  const COLORS = { red: red, blue: blue };
 // can be written as 
 // const COLORS = { red, blue}
+
+
+let name = "Kuma"
+let breed = "Yorkie"
+let bark = (times) => {
+  let amount = 1 * times
+  return amount
+}
+
+// let dog = {
+//   name: name,
+//   breed: breed
+// };
+
+// console.log(dog) //logs { name: 'Kuma', breed: 'Yorkie' }
+
+//using ES6
+
+let dog = { name, breed, bark }
+console.log(dog) //{ name: 'Kuma', breed: 'Yorkie', bark: [Function: bark] }
+console.log(dog.name) //logs Kuma
+console.log(dog.bark(5))
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //literals in functions
@@ -14,7 +39,7 @@ const canvasDimensions = function(width, initialHeight) {
   };
 }
 //is the same as 
-const canvasDimensions = function(width, initialHeight) {
+const canvasDimensions2 = function(width, initialHeight) {
   const height = initialHeight * 9 /16;
   return { 
     width,
@@ -36,9 +61,9 @@ const Car = {
   }
 };
 //can be written as
-const color = 'red';
+const color2 = 'red';
 
-const Car = {
+const Car2 = {
   color,
   drive: function() {
     return 'Vroom!';
