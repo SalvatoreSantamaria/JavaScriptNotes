@@ -27,47 +27,80 @@ const dog = {
 }
 
 const arrayData = [1, 3, 5, 7, 9]
+const arrayData2 = [1000, 99, 0, 43]
+const arrayUser = ['Kuma', 'small', 12, 'dog']
 
-
-// Pull data from objects
+// Pull data from objects -------------------------------------------------
 //ie const { ____ } = ____
 
-// pull data from arrays
+
+// pull data from arrays -------------------------------------------------
 //const [ ____, _____ ] = ______
 
-// pull data from arrays in an object
-// const someObject = {
-//     arr: ['a', 'b', 'c', 'd', 'e', 'f']
-//   }
-// const { arr: [,,,,,last]} = someObject
-// console.log(last)
 
-// pull data from objects in an array
+// pull data from objects in an array -------------------------------------------------
+const countries = [
+{
+    name: 'Austria',
+    info: {
+    population: 8217280,
+    area: 32382
+    }
+},
+{
+    name: 'Belgium',
+    info: {
+    population: 10431477,
+    area: 11787
+    }
+}]
+
+const [ {name: countryName}] = countries
+console.log(countryName)
+
+//Get multiple values from an array of objects ----------------------------------------
+
 const someArray = [
-    {one: 'a'},
-    {two: 'b'}
-]
-const [ one ] = someArray
-console.log(one)
+  { data: 1 },
+  { data: 2 },
+  { data: 3 }
+];
+    
+const [
+  { data: a },
+  { data: b },
+  { data: c }
+] = someArray
+    
+console.log(a, b, c); //logs out 1, 2, 3
 
-// pull data from objects directly in functions
+
+// pull data from objects directly in functions -------------------------------------------------
 // const ____ = ({}) => {
 //     return _____ 
 // }
 
-const tax = (amount) => {
-    return (amount * .08)
+const orderValue = ({quantity, price}) => {
+    return(quantity * price)
 }
 
-const total = ({quantity, price}) => {
-    const subtotal = (quantity * price)
-    return (tax(subtotal) + subtotal)
-}
+let result = orderValue(order)
+console.log(result)
 
-amount = total(order)
-console.log(amount)
 
-// Using Default Values
+// const tax = (amount) => {
+//     return (amount * .08)
+// }
+
+// const total = ({quantity, price}) => {
+//     const subtotal = (quantity * price)
+//     return (tax(subtotal) + subtotal)
+// }
+
+// amount = total(order)
+// console.log(amount)
+
+// Using Default Values -------------------------------------------------
 // Default values can be assigned to the variables just in case the value extracted from the array is undefined:
 
 // let [greeting = "hi",name = "Sarah"] = ["hello"];
@@ -75,7 +108,7 @@ console.log(amount)
 // console.log(greeting);//"Hello"
 // console.log(name);//"Sarah"
 
-//Swapping Values using the Destructuring Assignment
+//Swapping Values using the Destructuring Assignment -------------------------------------------------
 // We can use the destructuring assignment to swap the values of variables:
 //let a = 3;
 // let b = 6;
@@ -84,3 +117,11 @@ console.log(amount)
 
 // console.log(a);//6
 // console.log(b);//3
+
+// Bonus how to ----------------------------------------------------------------------------------------
+// pull data from arrays in an object
+// const someObject = {
+//     arr: ['a', 'b', 'c', 'd', 'e', 'f']
+//   }
+// const { arr: [,,,,,last]} = someObject
+// console.log(last)
