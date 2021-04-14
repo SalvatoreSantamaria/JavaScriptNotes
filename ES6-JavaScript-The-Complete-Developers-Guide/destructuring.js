@@ -53,15 +53,16 @@ const { arr: [first] } = someObject
 console.log(first)
 
 //Practical Destructuring Objects //////////////////////////////////////////////////////////////////////////////////////////
+//Example 1
 const someObject2 = {
   resource: 'this text will get assigned to _resource',
   notGettingAssigned: 'nope',
   alsoNotGettingAssigned: 'also nope'
-
 }
 let { resource: _resource } = someObject2
 console.log('_resource is: ' + _resource)//logs _resource is: this text will get assigned to _resource
 
+//Example 2 ////////////////
 let anotherObject = {
   prop1: 'stuff',
   prop2: 'things',
