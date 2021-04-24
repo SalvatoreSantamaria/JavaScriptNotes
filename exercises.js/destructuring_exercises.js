@@ -33,21 +33,20 @@ const arrayUser = ['Kuma', 'small', 12, 'dog']
 const someObject2 = {
     resource: 'this text will get assigned to _resource',
     notGettingAssigned: 'nope',
-    alsoNotGettingAssigned: 'also nope'
+    alsoNotGettingAssigned: 'also nope',
+    objectProperty: 'this text is from the objectProperty'
   }
 
 // Pull data property from object and reassign it: -------------------------------------------------
 //ie let { ______: _resource } = someObject2
 //console.log('_resource is: ' + _resource)
 
-
-// Pull data from objects -------------------------------------------------
-//ie const { ____ } = ____
-
+// // Pull data property from object and reassign it via shorthard: -------------------------------------------------
+//ie let {______} = someObject2
+//console.log('_____ is:' )
 
 // pull data from arrays -------------------------------------------------
 //const [ ____, _____ ] = ______
-
 
 // pull data from objects in an array -------------------------------------------------
 const countries = [
@@ -66,8 +65,9 @@ const countries = [
     }
 }]
 
-const [ {name: countryName}] = countries
-console.log(countryName)
+//keep because I don't remember
+//const [ {name: countryName}] = countries
+//console.log(countryName)
 
 //Get multiple values from an array of objects ----------------------------------------
 
@@ -77,14 +77,13 @@ const someArray = [
   { data: 3 }
 ];
     
-const [
-  { data: a },
-  { data: b },
-  { data: c }
-] = someArray
+// const [
+//   { data: a },
+//   { data: b },
+//   { data: c }
+// ] = someArray
     
-console.log(a, b, c); //logs out 1, 2, 3
-
+//console.log(a, b, c); //logs out 1, 2, 3
 
 // pull data from objects directly in functions -------------------------------------------------
 // const ____ = ({}) => {
@@ -96,7 +95,7 @@ const orderValue = ({quantity, price}) => {
 }
 
 let result = orderValue(order)
-console.log(result)
+//console.log(result)
 
 
 // const tax = (amount) => {

@@ -12,11 +12,11 @@ const cars = [
 ]
 
 // return array of years
-// return cars that are older than 2000
+// return array of cars with model and how many years old it is 
 
 
 const numbers = [0,10,22,33,404,500,666,7,.8,99]
 
-// return array of even numbers
-// return array of numbers larger that 20
+// return array of doubled numbers
+
 
