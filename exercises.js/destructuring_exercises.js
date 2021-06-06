@@ -52,6 +52,7 @@ const someObject2 = {
 const countries = [
 {
     name: 'Austria',
+    uid: 1234,
     info: {
     population: 8217280,
     area: 32382
@@ -59,6 +60,7 @@ const countries = [
 },
 {
     name: 'Belgium',
+    uid: 5678,
     info: {
     population: 10431477,
     area: 11787
@@ -89,6 +91,13 @@ const someArray = [
 // const ____ = ({}) => {
 //     return _____ 
 // }
+
+const x = ({name}) => {
+    return name.toLowerCase()
+}
+
+console.log(x(dog))
+
 
 const orderValue = ({quantity, price}) => {
     return(quantity * price)
