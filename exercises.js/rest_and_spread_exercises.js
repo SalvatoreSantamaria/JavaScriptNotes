@@ -11,10 +11,11 @@ const secondaryColors = ['yellow', 'brown']
 //_______________________________________
 
 // Spread numbers (not an array!) into a function
-function xyz(..._) {
-  return _
-}
-xyz(1,2,3,4,5)
+// function xyz(...args) {
+//   return [...args]
+// }
+// xyz(1,2,3,4,5)
+
 
 // Spread agin into a funciton
 // let someFunc = (...args) => {
