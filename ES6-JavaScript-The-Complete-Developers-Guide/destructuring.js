@@ -20,7 +20,7 @@ const { amount } = expense;
 function expenseSummary({ type, amount }) {
   return(`${type} and ${amount}`)
 }
-expenseSummary(expense)
+console.log(expenseSummary(expense))
 
 //exanple 2
 let x = () => {

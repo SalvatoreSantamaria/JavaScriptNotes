@@ -44,7 +44,7 @@ const users = ['Kuma', 'Addie', 'Rae']
 const nameLengths = users.map( name => {
   return name.length
 });
-// console.log(nameLengths)
+console.log(nameLengths)
 
 
 //Multiple Arrow Functions 
