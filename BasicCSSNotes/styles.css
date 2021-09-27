@@ -1,0 +1,92 @@
+
+
+/* template: 
+
+*/
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Multiple Elements: Select multiple elements like this:
+a, li, p {
+  color: red;
+} 
+
+Not like this
+a {
+  color: red;
+}
+p {
+  color: red;
+}
+*/
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
+/*  > Child combinator: this is used to select direct children:        >
+#main-content > p{
+  color: aqua;
+}
+*/
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Adjacent Selector (no example on page): 
+  #all-articles h2 + p {
+    https://www.youtube.com/watch?v=K92X4yyyfNY&list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT&index=17
+*/
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Attribute Selector: Attributes are id="", class="", href="". Example: span[class]{
+ You can also use pattern matching: [class~="something"] or [href$="something"] or ^, etc
+
+span[class]{
+  color: orange;
+}
+
+div[id]{
+  background: grey;
+}
+
+a[title] {
+  color: brown;
+}
+
+a[title="special-title"] {
+  color: pink;
+}
+*/
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Pseudo-Classes- mostly dynamic and structural      : 
+  Special Keywords that go after selectors
+  They can be used to target
+    special behavioural states
+    advanced structural elements
+
+
+  the pseudo class is : , like a:hover
+
+  a:hover{
+    color: red;
+  }
+
+  you can also use like this
+  No example on page
+  p:first-child {
+    font-weight: bold
+  }
+
+  also
+  first-of-type, last-of-type
+  No example on page
+  
+*/
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
+stopped here: https://www.youtube.com/watch?v=rK54iCKi6TE&list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT&index=25
