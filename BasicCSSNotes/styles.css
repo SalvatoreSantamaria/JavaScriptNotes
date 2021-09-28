@@ -89,4 +89,15 @@ a[title="special-title"] {
 
 /* ------------------------------------------------------------------------------------------------------------------------------- */
 
-stopped here: https://www.youtube.com/watch?v=rK54iCKi6TE&list=PL4cUxeGkcC9gQeDH6xYhmO-db2mhoTSrT&index=25
+/* Combining selectors 
+this syntax says get all the articles with a class of featured-content
+ a.special-link {
+  background:blueviolet;
+}
+
+this syntax is decendant syntax, ie, .special-link is a decendant of a
+a .special-link { 
+  
+}
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
