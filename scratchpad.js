@@ -1,12 +1,17 @@
-let expense = {
-  type: 'stuff',
-  value: 1,
+let letters2 = ['a', 'b', 'c']
+
+
+let output = (item, index, array) => {
+  //console.log(item + 'i')
+  item + 'i'
 }
+let r = letters2.forEach(output) //logs a 0  b 1 c 2
 
+console.log(r)
 
+// const numbers = [10, 20, 30]
 
-const someFunction = ({value, type}) => {
-  console.log(value, type)
-}
+// let x = (item) => {
+//   return item + 1
+// }
 
-someFunction(expense)

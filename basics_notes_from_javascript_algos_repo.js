@@ -116,6 +116,19 @@ for (let i = 0; i < arr.length; i++) {
   }
 }
 
+//lookup by value, lookup by key
+const countries = {"Great Britian" : "GB", "United States" : "US"};
+
+function lookupByValue(value) {
+  return Object.keys(countries).find(key => countries[key] === value);
+}
+console.log(lookupByValue("US"));
+
+function lookupByKey(key) {
+  return countries[key]
+}
+console.log(lookupByKey("United States"))
+
 //search an object 
 if (x in obj) {
 }
