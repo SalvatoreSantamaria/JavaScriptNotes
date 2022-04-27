@@ -1,7 +1,9 @@
-Double NOT (!!)
-It is possible to use a couple of NOT operators in series to explicitly force the conversion of any value to the corresponding boolean primitive. The conversion is based on the "truthyness" or "falsyness" of the value (see truthy and falsy).
+//Double NOT (!!)
+//It is possible to use a couple of NOT operators in series to explicitly force the conversion of any value to the corresponding boolean primitive. The conversion is based on the "truthyness" or "falsyness" of the value (see truthy and falsy).
 
-The same conversion can be done through the Boolean function.
+//The same conversion can be done through the Boolean function.
+
+//This is useful for converting strings
 
 n1 = !!true                   // !!truthy returns true
 n2 = !!{}                     // !!truthy returns true: any object is truthy...
