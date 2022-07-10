@@ -29,3 +29,20 @@ one(two)
 curryingFunction = (inputX) => (inputY) => console.log(inputX, inputY)
 let result = curryingFunction('inputX') //result is set to the return value of curryingFunction. curryingFunction is just returning another function
 result('inputY') //run the inner function
+
+//--------------------------------------------------------------------------------------------
+
+//These all do the same thing!
+const chainedAddition = a => b => console.log(a+b)
+
+const chainedAddition = (a) => {
+  return (b) => {
+    console.log(a+b)
+  }
+}
+
+var chainedAddition = function chainedAddition (a) {
+  return function (b) {
+    return console.log(a+b);
+  };
+};

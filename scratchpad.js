@@ -22,11 +22,12 @@ let r = letters2.forEach(output) //logs a 0  b 1 c 2
 // const eventAttribute = evt.attributes && evt.attributes.length && evt.attributes[0]
 // console.log('eventAttribute ', eventAttribute)
 
-let firstBillingDate = new Date()
-let dayRemaining = 13
-let neg = -1
-console.log('firstBillingDate', firstBillingDate)
+// let firstBillingDate = new Date()
+// let dayRemaining = 13
+// let neg = -1
+// console.log('firstBillingDate', firstBillingDate)
 
-console.log(!!firstBillingDate)
-let test = !!firstBillingDate ? neg : dayRemaining
-console.log('test is ', test)
+// console.log(!!firstBillingDate)
+// let test = !!firstBillingDate ? neg : dayRemaining
+// console.log('test is ', test)
+
