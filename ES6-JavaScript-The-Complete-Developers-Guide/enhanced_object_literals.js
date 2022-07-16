@@ -1,49 +1,30 @@
-//key value pairs can be condensed to one word when the word is the same:
-// {
-//  const COLORS = { red: red, blue: blue };
-// can be written as 
-// const COLORS = { red, blue}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// https://www.youtube.com/watch?v=lpAqdeRKaSw
 
-//literals in functions
-const canvasDimensions = function(width, initialHeight) {
-  const height = initialHeight * 9 /16;
-  return { 
-    width: width, 
-    height: height 
-  };
-}
-//is the same as 
-const canvasDimensions = function(width, initialHeight) {
-  const height = initialHeight * 9 /16;
-  return { 
-    width,
-    height
-  };
-}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const name = "Kuma"
+const breed = "Yorkie"
+const role = "pet" // add a property name based on the value of a variable
 
-//enhanced literal notation
-const color = 'red';
-
-const Car = {
-  color: color,
-  drive: function() {
-    return 'Vroom!';
-  },
-  getColor: function() {
-    return this.color;
+const dog = {
+  name: name,
+  breed: breed,
+  bark: function(input) {
+    return this.name + " barked" + " at " + input + "!"
   }
-};
-//can be written as
-const color = 'red';
+}
 
-const Car = {
-  color,
-  drive: function() {
-    return 'Vroom!';
-  },
-  getColor: function() {
-    return this.color;
+console.log('dog 1 ______________________')
+console.log(dog)
+console.log(dog.bark('me'))
+
+// with ES6 ____________________________________________________________________________________
+const dog2 = {
+  [role]: true, // add a property name based on the value of a variable. dog2.role is 'true'
+  name,
+  breed,
+  bark(input) {
+    return this.name + " barked" + " at " + input + "!"
   }
-};
+}
+console.log('dog 2 ______________________')
+console.log(dog2) //{ pet: true, name: 'Kuma', breed: 'Yorkie', bark: [Function: bark] }
+console.log(dog2.bark('you'))

@@ -33,3 +33,6 @@ function balancedParens(string){
 
   }, 0) //counter increments by 1 with open parens, decrements by 1 with closing parens
 }
+
+//converting an array of objects into an object of objects:
+//https://www.youtube.com/watch?v=cVx-nMahAjk

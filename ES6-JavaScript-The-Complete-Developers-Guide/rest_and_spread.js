@@ -60,3 +60,55 @@ console.log(max) //logs 4
 let add = (a, b) => { return a + b }
 let arr = [1, 2]
 console.log(add(...arr)) // returns 3
+
+//SPREAD OBJECTS 1 -----------------------------------------------------------------------
+
+const obj = {
+  first: 1,
+  second: 2,
+  third: 3
+}
+const someArray = [10, 20, 30]
+
+const combiner = (a, b) => {
+  return { ...a, ...b}
+}
+
+const newObj = combiner(obj, someArray)
+console.log(newObj) //{ '0': 10, '1': 20, '2': 30, first: 1, second: 2, third: 3 }
+
+//SPREAD OBJECTS 2 -----------------------------------------------------------------------
+
+const customerDataObj = {
+  id: '123',
+  userName: 'dog21',
+  first_name: 'Kuma',
+  phone: '2535550000',
+  address: {
+    item: '123 Fake St, Monroe, WA'
+  }
+}
+
+const orderDetails = {
+  item: 'Dog Treats',
+  category: 'Pet Items',
+  price: 19.99,
+  quantity: 1,
+  orderDate: '10/1/2021'
+}
+
+const dataToProcess = { ...customerDataObj, ...orderDetails }
+console.log(dataToProcess) //combines the two objects above:
+
+// {
+//   id: '123',
+//   userName: 'dog21',
+//   first_name: 'Kuma',
+//   phone: '2535550000',
+//   address: { item: '123 Fake St, Monroe, WA' },
+//   item: 'Dog Treats',
+//   category: 'Pet Items',
+//   price: 19.99,
+//   quantity: 1,
+//   orderDate: '10/1/2021'
+// }
