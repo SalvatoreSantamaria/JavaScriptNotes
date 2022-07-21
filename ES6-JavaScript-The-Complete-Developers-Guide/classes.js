@@ -34,5 +34,5 @@ class Truck extends Car2 {
   }
 }
 const f250 = new Truck({ manufacturer: 'Ford', color: 'Silver'})
-console.log(f250) //Truck { wheels: 4, make: 'Ford' }
+console.log(f250) //Truck { wheels: 4, make: 'Ford', color: 'Silver' }
 console.log(f250.drive()) //vroom

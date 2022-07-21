@@ -12,7 +12,7 @@ let modern = cars.every((c)=> {
 })
 console.log(modern)
 
-//are some cars newer that 2000?
+//are some cars newer than 2000?
 let x = cars.some((c)=> {
   return(c.year > 2000)
 })
