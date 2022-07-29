@@ -4,3 +4,6 @@ In a node environment, run node and the name of the file:
 example: `node scratchpad.js`  
 
 Note: make sure you cd into the correct folder if necessary.
+
+TO DO:
+Map and Set
