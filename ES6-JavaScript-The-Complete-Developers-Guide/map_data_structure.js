@@ -161,3 +161,10 @@ if (!map.has(enrollmentArray[i][0])) {
 } else {
   map.set(enrollmentArray[i][0], [...map.get(enrollmentArray[i][0]), enrollmentArray[i][1]])
 }
+
+
+// Find data by value -----------------------------------------
+function getKey(value) {
+  return [...lettersMap].find(([key, val]) => val == value)[0]
+}
+console.log(getKey('first')) //logs a

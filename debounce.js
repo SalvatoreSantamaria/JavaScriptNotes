@@ -1,3 +1,5 @@
+//Technique to wait a certain amount of time (ie if typing into a search)
+
 function debounce(fn, delay) {
   //i was supposed to implement this so that debounce is only called once
   let timeout
