@@ -6,7 +6,7 @@ const posts = [
 
 
 // Mock synchronous Code. This won't output post three, 
-// because create takess longer that get
+// because create takes longer that get
 // function createPost(post) {
 //   //mimic server response time
 //   setTimeout(function(post) {

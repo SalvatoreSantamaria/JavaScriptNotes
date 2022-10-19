@@ -43,4 +43,6 @@ const lunch = {
   snack: 'Chips',
 }
 
-const { } = lunch
+const { sandwich, drink, snack } = lunch
+
+console.log(sandwich, drink, snack)

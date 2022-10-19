@@ -81,13 +81,15 @@ const Game = (() => {
     return {
         current: current, //  The revealing pattern uses pointers to the private area of the IIFE 
         increment: increment, 
-        reset, reset
+        reset: reset
     }
 })();
 
 Game.increment();
-console.log(Game.current());
-
+console.log(Game.current());//1
+console.log(Game.current());//2
+Game.reset();
+console.log(Game.current());//1
 // ------------------------------------------------
 // Reason 4. Injecting a namespace object
 // This is a node environment so this code doesn't have the window object

@@ -34,4 +34,27 @@ doThing2(hello2)
 let names = ['waffles', 'warkitten', 'mona']
 names.forEach(hello2)
 
+//-------------------------------------------------------------------------------------------------
+// Excersize in another way that I could use with an output or async function
 
+
+const calc = (cb, n, type) => {//2
+
+  if (type === 'add') {
+    let r =  n + 10
+    cb('cb with', r)
+  }
+  
+  if (type === 'times') {//3
+    let r =  n * 10
+    cb('cb with', r)//4
+  }
+}
+
+//This could be an async function
+const cb = (text, result) => {//5
+  console.log(text, result)
+}
+
+
+calc(cb, 10, 'times')// 1
