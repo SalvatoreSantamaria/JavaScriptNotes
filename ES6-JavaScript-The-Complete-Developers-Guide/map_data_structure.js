@@ -168,3 +168,29 @@ function getKey(value) {
   return [...lettersMap].find(([key, val]) => val == value)[0]
 }
 console.log(getKey('first')) //logs a
+
+
+// Sorting Maps. I believe it's recommended to use plain Objects instead of maps if sorting is needed
+const myMap1 = new Map();
+myMap1.set("a",3);
+myMap1.set("c",4);
+myMap1.set("b",1);
+myMap1.set("d",2);
+
+// sort by value
+const mapSort1 = new Map([...myMap1.entries()].sort((a, b) => b[1] - a[1]));
+console.log(mapSort1);
+// Map(4) {"c" => 4, "a" => 3, "d" => 2, "b" => 1}
+
+const mapSort2 = new Map([...myMap1.entries()].sort((a, b) => a[1] - b[1]));
+console.log(mapSort2);
+// Map(4) {"b" => 1, "d" => 2, "a" => 3, "c" => 4}
+
+// sort by key
+const mapSort3 = new Map([...myMap1.entries()].sort());
+console.log(mapSort3);
+// Map(4) {"a" => 3, "b" => 1, "c" => 4, "d" => 2}
+
+const mapSort4 = new Map([...myMap1.entries()].reverse());
+console.log(mapSort4);
+// Map(4) {"d" => 2, "b" => 1, "c" => 4, "a" => 3}
