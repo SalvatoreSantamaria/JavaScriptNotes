@@ -170,7 +170,7 @@ function getKey(value) {
 console.log(getKey('first')) //logs a
 
 
-// Sorting Maps. I believe it's recommended to use plain Objects instead of maps if sorting is needed
+// Sorting Maps. I believe it's recommended to use plain Objects instead of maps if sorting is needed -----------------------------------------
 const myMap1 = new Map();
 myMap1.set("a",3);
 myMap1.set("c",4);
@@ -193,4 +193,42 @@ console.log(mapSort3);
 
 const mapSort4 = new Map([...myMap1.entries()].reverse());
 console.log(mapSort4);
+
+
 // Map(4) {"d" => 2, "b" => 1, "c" => 4, "a" => 3}
+// Sorting map ------------------------------------------------------
+// https://stackoverflow.com/questions/31158902/is-it-possible-to-sort-a-es6-map-object
+
+// new Map([...map].sort((a, b) => 
+// // Some sort function comparing keys with a[0] b[0] or values with a[1] b[1]
+// ))
+// If you're expecting strings: As normal for .sort you need to return -1 if lower and 0 if equal; for strings, the recommended way is using .localeCompare() which does this correctly and automatically handles awkward characters like ä where the position varies by user locale.
+
+// So here's a simple way to sort a map by string keys:
+
+// new Map([...map].sort((a, b) => String(a[0]).localeCompare(b[0])))
+// ...and by string values:
+
+// new Map([...map].sort((a, b) => String(a[1]).localeCompare(b[1])))
+// These are type-safe in that they won't throw an error if they hit a non-string key or value. The String() at the start forces a to be a string (and is good for readability), and .localeCompare() itself forces its argument to be a string without hitting an error.
+
+// In detail with examples
+// tldr: ...map.entries() is redundant, just ...map is fine; and a lazy .sort() without passing a sort function risks weird edge case bugs caused by string coercion.
+
+// The .entries() in [...map.entries()] (suggested in many answers) is redundant, probably adding an extra iteration of the map unless the JS engine optimises that away for you.
+
+// In the simple test case, you can do what the question asks for with:
+
+// new Map([...map].sort())
+// ...which, if the keys are all strings, compares squashed and coerced comma-joined key-value strings like '2-1,foo' and '0-1,[object Object]', returning a new Map with the new insertion order:
+
+// Note: if you see only {} in SO's console output, look in your real browser console
+
+// const map = new Map([
+// ['2-1', 'foo'],
+// ['0-1', { bar: 'bar' }],
+// ['3-5', () => 'fuz'],
+// ['3-2', [ 'baz' ]]
+// ])
+
+// console.log(new Map([...map].sort()))

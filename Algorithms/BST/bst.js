@@ -15,11 +15,11 @@ var inorderTraversal = function(node) {
   let result = []
   // recursive function
   function dfs(node) {
-      // Preorder result.push(node.val) // outputs [1,2,3]
+      // Preorder result.push(node.val) // outputs [1,2,3] //root, left, right
       if (node.left) { dfs(node.left) }
       result.push(node.val) // Inorder // outputs [1,3,2]
       if (node.right) { dfs(node.right) }
-      // Postorder result.push(node.val) // outputs [3,2,1]
+      // Postorder result.push(node.val) // outputs [3,2,1] // search order: left, right, root
   }
   dfs(node)
   return result

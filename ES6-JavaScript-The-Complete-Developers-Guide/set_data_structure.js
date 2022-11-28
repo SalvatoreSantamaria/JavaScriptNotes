@@ -22,3 +22,8 @@ let mySet2 = new Set(arr)
 console.log(mySet2.has(50))
 
 // use for..of or forEach to iterate over a Set. (map, etc wont work because it's not an array)
+
+// Sets are great for filtering duplicates from data. They'll only create with unique values: ------------------------------------------------------------------------
+let arr3 = [10,10,10,20,20,30,40,50,60]
+let mySet3 = new Set(arr3)
+console.log('mySet3', mySet3)
