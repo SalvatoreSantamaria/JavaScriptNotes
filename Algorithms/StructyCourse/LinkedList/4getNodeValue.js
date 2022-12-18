@@ -21,7 +21,6 @@ c.next = d;
 // a -> b -> c -> d
 
 const getNodeValue = (head, index) => {
-// todo
 let count = 0
 while (head) {
     
@@ -30,8 +29,8 @@ while (head) {
     }
     count += 1
     head = head.next
-}
-return null
+  }
+  return null
 };
 
 console.log(getNodeValue(a, 2)); // 'c'
