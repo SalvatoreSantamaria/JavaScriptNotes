@@ -31,3 +31,15 @@ const autoMap = new Map(Object.entries(standardObj))
 // Find data by index -----------------------------------------
 const firstEntry = autoMap.get('1')
 //console.log(firstEntry) // logs the value, 'Ford'
+
+// Common Pattern to Build a Hashmap with a Map -----------------------------------------
+// From https://leetcode.com/problems/sum-of-unique-elements/
+
+let map = new Map()
+for (let i = 0; i < nums.length; i++) {
+  if (!map.has(nums[i])) { //or !map.get(...) will work as well
+      map.set(nums[i], 1)
+  } else {
+      map.set(nums[i], map.get(nums[i]) + 1)        
+  }
+}
