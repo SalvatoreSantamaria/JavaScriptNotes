@@ -1,3 +1,5 @@
+//Walk a "count 1's" problem as an intro example
+
 /*
 The Max Consecutive Ones can be solved using sliding window technique, steps to solve this problem are as follows :
 - Traverse the input array from start to end, at each iteration check if the current element is 1 or 0. (Step 1)
@@ -30,8 +32,7 @@ let input = [1,1,0,1,1,1]
 const result = findMaxConsecutiveOnes(input)
 //console.log('result', result) //returns 3
 
-///basic with for loop ---------------------------------------------------------------------------------------
-
+//1. Basic sliding window with a for loop ---------------------------------------------------------------------------------------
 const basicSlidingWindow = function(nums) {
   for (let windowEnd = 0; windowEnd < nums.length; windowEnd++) {
     if (nums[windowEnd] === 1) {
@@ -45,8 +46,7 @@ let input2 = [0,0,1,1,1,1,0]
 //const result2 = basicSlidingWindow(input2)
 // console.log('result2', result2) //test function, not returning anything
 
-//basic with while loop ---------------------------------------------------------------------------------------
-
+//2. A Basic sliding window with a while loop ---------------------------------------------------------------------------------------
 const basicSlidingWindowWhileLoop = function(nums) {
   let windowEnd = 0
 
@@ -64,85 +64,56 @@ let input3 = [0,0,1,1,1,1,0]
 //const result3 = basicSlidingWindowWhileLoop(input3)
 // console.log('result3', result3) // test function, not returning anything
 
+//3. Pattern to grow and move a window ---------------------------------------------------------------------------------------
+// Grow a window to the target size
+//  and then move the window and log out the values
+
+var basicGrowAndMoveAWindow = function(target, arr) {
+  let windowStart = 0 //the window start pointer
+  let windowSize = 0 //for tracking the window size
+
+  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) { //move through the arr, we will use windowEnd for the window end pointer
+
+    windowSize += 1 //grow the window tracker
+
+    if (windowSize === target) { //check the target size
+      //console.log('array window:',arr[windowStart], arr[windowStart + 1], arr[windowEnd]) will log out 10, 10, 10 | 10, 10, 20, | 10, 20, 20 as expected
+      windowSize-- //shrink the window so it can move
+      windowStart++ //move the starting location of the window
+    }
+  }
+}
+
+let testResult2 = basicGrowAndMoveAWindow(3, [10,10,10,20,20,20,30,30,30])
+console.log('testResult2',testResult2)
+
+
 // Leetcode problem: https://leetcode.com/problems/minimum-size-subarray-sum/ ---------------------------------------------------------------------------------------
-
-
+//4. Pattern to dynamically grow a moving window and then dynamically shrink it
 // https://www.youtube.com/watch?v=mBbU-6cxj3w&list=PLxQ8cCJ6LyOYCas1Ln-L8kCBquxw20ljC&index=2
-var minSubArrayLen = function(target, arr) {
+const minSubArrayLen = function(target, arr) {
   let windowStart = 0
   let windowSum = 0
   let minLengthSoFar = Infinity
 
-  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-    windowSum += arr[windowEnd] //grow the window
+  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) { //move through the arr, we will use windowEnd for the window end pointer
+    windowSum += arr[windowEnd] //grow the window sum, we need this for the window shrink check
   
-    while (windowSum >= target) { // shrink window when windowSum is >= to target, until windowSum < target again
-      let currentWindowLength = windowEnd - windowStart + 1
-      minLengthSoFar = Math.min(minLengthSoFar, currentWindowLength)
-      windowSum -= arr[windowStart]
-      windowStart++
+    while (windowSum >= target) { //dynamic window shrink check
+      let currentWindowLength = windowEnd - windowStart + 1 //get the current window length
+      minLengthSoFar = Math.min(minLengthSoFar, currentWindowLength) //calc the min and set it, this is what we need to return.
+      windowSum -= arr[windowStart] //subtract the starting/left/trailing pointer value for the dynamic check
+      windowStart++ //move the starting/left/trailing pointer for the  window
     }
   }
-
+// Leetcode edge case check
   if (minLengthSoFar === Infinity) {
     return 0
   }
-
-  return minLengthSoFar
+  console.log(minLengthSoFar)
+  return minLengthSoFar // then return the result
 
 }
 
 let testResult = minSubArrayLen(7, [2,3,1,2,4,3])
 console.log('testResult',testResult)
-
-
-// WIP with above algo, trying to find a basic generica formula ---------------------------------------------------------------------------------------
-
-var minSubArrayLenBasic = function(target, arr) {
-  let windowStart = 0
-  let windowSum = 0
-  //let minLengthSoFar = Infinity
-
-  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-    windowSum += arr[windowEnd] //grow the window
-  
-    while (windowSum >= target) { // shrink window when windowSum is >= to target, until windowSum < target again
-      let currentWindowLength = windowEnd - windowStart + 1
-      //minLengthSoFar = Math.min(minLengthSoFar, currentWindowLength)
-      windowSum -= arr[windowStart]
-      windowStart++
-    }
-  }
-
-  // if (minLengthSoFar === Infinity) {
-  //   return 0
-  // }
-  
-  // return minLengthSoFar
-
-}
-
-// let testResult2 = minSubArrayLenBasic(7, [2,3,1,2,4,3])
-// console.log('testResult',testResult)
-
-//---------------------------------------------------------------------------------------
-// 643. Maximum Average Subarray I 
-//https://www.youtube.com/watch?v=HnrxlGipKUE
-var findMaxAverage = function(nums, k) {
-  let max = -Infinity;
-  let windowSum = 0;
-  let windowStart = 0;
-
-  for (let windowEnd = 0; windowEnd < nums.length; windowEnd++) {
-      windowSum += nums[windowEnd]; //update the windowSum
-
-      //above loop will run and windowSum will add up until we create the window
-      if(windowEnd - windowStart === k - 1) { //check, are we in a valid window
-          let avg = windowSum/k //then get the average
-          max = Math.max(max, avg) //and update the max
-          windowSum -= nums[windowStart]; //subtract the window value
-          windowStart++ //increment the window
-      }
-  }
-  return max
-}
