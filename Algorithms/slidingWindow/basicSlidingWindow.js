@@ -88,6 +88,29 @@ let testResult2 = basicGrowAndMoveAWindow(3, [10,10,10,20,20,20,30,30,30])
 console.log('testResult2',testResult2)
 
 
+//3.5 Example of a basic sliding window with grow / move / shrink
+// https://leetcode.com/problems/maximum-average-subarray-i/
+
+var findMaxAverage = function(nums, k) {
+  let max = -Infinity;
+  let soFar = 0;
+  let windowStart = 0;
+
+  for (let windowEnd = 0; windowEnd < nums.length; windowEnd++) {
+      soFar += nums[windowEnd]; //update the soFar
+
+      if(windowEnd - windowStart === k - 1) { //check, are we in a valid window
+          let avg = soFar/k //then get the average
+          max = Math.max(max, avg) //and update the max
+          soFar -= nums[windowStart]; //subtract the window value
+          windowStart++ //increment the window
+      }
+  }
+  return max
+}
+
+
+
 // Leetcode problem: https://leetcode.com/problems/minimum-size-subarray-sum/ ---------------------------------------------------------------------------------------
 //4. Pattern to dynamically grow a moving window and then dynamically shrink it
 // https://www.youtube.com/watch?v=mBbU-6cxj3w&list=PLxQ8cCJ6LyOYCas1Ln-L8kCBquxw20ljC&index=2
