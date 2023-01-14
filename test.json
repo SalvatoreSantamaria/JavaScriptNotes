@@ -1,0 +1,44 @@
+let arr = [
+    {
+        "item": {
+            "displayOrder": 0,
+            "phase": {
+                "displayOrder": 0
+            }
+        }
+    },
+    {
+        "item": {
+            "displayOrder": 3,
+            "phase": {}
+        }
+    },
+    {
+        "item": {
+            "displayOrder": 0,
+            "phase": {
+                "displayOrder": 1
+            }
+        }
+    },
+    {
+        "item": {
+            "displayOrder": 2,
+            "phase": {}
+        }
+    },
+    {
+        "item": {
+            "displayOrder": 1,
+            "phase": {
+                "displayOrder": 0
+            }
+        }
+    },
+    {
+        "item": {
+            "displayOrder": 1,
+            "phase": {}
+        }
+    }
+]

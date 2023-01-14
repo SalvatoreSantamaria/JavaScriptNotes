@@ -3,7 +3,7 @@ const draw = {}
 const getItem = (itemDisplayOrder, phaseDisplayOrder) => ({
     item: {
         displayOrder: itemDisplayOrder,
-        phase: Number.isNaN(phaseDisplayOrder) ? null : { displayOrder: phaseDisplayOrder },
+        phase: isNaN(phaseDisplayOrder) ? null : { displayOrder: phaseDisplayOrder },
     },
 });
 
@@ -24,17 +24,17 @@ const budgetItems = [
 ];
 draw.items = [...budgetItems]
 
-console.log('1 draw', draw)
+// console.log('1 draw', draw)
 
 ///----------------------------------------------------------------
 
 let testInput = [
+    { item: { displayOrder: 0, phase: {displayOrder: 0}} },
+    { item: { displayOrder: 3, phase: null } },
+    { item: { displayOrder: 0, phase: {displayOrder: 1}} },
     { item: { displayOrder: 2, phase: null } },
     { item: { displayOrder: 1, phase: {displayOrder: 0}} },
     { item: { displayOrder: 1, phase: null } },
-    { item: { displayOrder: 0, phase: {displayOrder: 0}} },
-    { item: { displayOrder: 0, phase: {displayOrder: 1}} },
-    { item: { displayOrder: 3, phase: null } },
   ]
  
 let expectedBudgetItemsOrdered = [
@@ -53,8 +53,9 @@ App = { isNull(value) {
     return typeof value === 'undefined' || value === null;
 }}
 
-const sortBudgetItemsByDisplayOrder = (budgetItems) => {
+const sortBudgetItemsByDisplayOrder = (draw) => {
     //console.log('dashboards draw', draw);
+    let budgetItems = [...draw.items]
 
     //const budgetItems = draw.attr('items').attr();
     console.log('dashboards budgetItems input', JSON.stringify(budgetItems));//this gives me a very confusing Can.js object 
@@ -83,4 +84,4 @@ const sortBudgetItemsByDisplayOrder = (budgetItems) => {
     //draw.attr('items', budgetItemsOrderedByDisplayOrder);
 }
 
-sortBudgetItemsByDisplayOrder(testInput)
+sortBudgetItemsByDisplayOrder(draw)

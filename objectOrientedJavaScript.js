@@ -156,3 +156,17 @@ class Person3 {
   console.log(john)
   console.log(john.greeting()); //accessing the method from Person3, which Customer2 inherited from
   console.log(Customer2.getMembershipCost()); //using static method
+
+  ////////////////////////////////////////////////////////////////////////
+  // Remember you can also just add function to an object and them call them
+
+  const App = {
+    getNumber() {
+      console.log('123')
+      return '123'
+    }
+  }
+
+  export function doubleNumber(number) {
+    return (App.getNumber(number) * 2)
+  }
