@@ -167,3 +167,33 @@ var isSubsequence = function(s, t) {
 
 console.log(isSubsequence('ace', 'abcde')) //true
 console.log(isSubsequence('aec', 'abcde')) //false
+
+//-----------------------------------------------------------------------------------
+//Need to include the for while pattern- here's an example of the pattern in use
+//https://leetcode.com/problems/most-profit-assigning-work
+var maxProfitAssignment = function(difficulty, profit, worker) {
+    //Map the difficulty and profit values together, then sort it
+      const jobs = difficulty.map((diff, i) => [diff, profit[i]]);
+      jobs.sort((a, b) => a[0] - b[0]);
+      console.log('jobs', jobs)
+  
+      worker.sort((a, b) => a - b); //sort workers
+  
+      let result = 0;
+      let maxProfit = 0;
+      let i = 0;
+  
+        for (let w = 0; w < worker.length; w++) { //loop thru workers
+          while (i < jobs.length && worker[w] >= jobs[i][0]) { // while theres a job and the worker is able to do the job
+  
+              maxProfit = Math.max(maxProfit, jobs[i][1]); // add max
+              console.log('jobs[i]', jobs[i], 'worker[w]', worker[w])
+              console.log('maxProfit', maxProfit)
+  
+              i++
+          }
+          result += maxProfit; // need to add to result because the above is calculating the maxProfit (profit and difficulty are matched at random)
+          console.log('result', result)
+      }
+      return result;
+  };
