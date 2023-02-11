@@ -64,6 +64,39 @@ function findPair(arr, targetSum) {
 // console.log(findPair([1,2,3,4,5], 7)) //[2, 5]
 
 //-----------------------------------------------------------------------------------
+
+// Avoiding a double for loop with two pointers and a while
+//LeetCode 392. Is Subsequence
+// Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+
+// A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+var isSubsequence = function(s, t) {
+    // Initialize pointers for both strings
+    let i = 0
+    let j = 0
+
+    // We can iterate until either of them becomes zero...
+    while (i < s.length && j < t.length) {
+        //only increment i pointer when the s letter is in t
+        if (s[i] === t[j]) {
+            i++
+        }
+        // but always increment j pointer
+        j++
+    }
+// If the i pointer is equal to the size of s, then it's we've found all the letters. This is kind of a count
+    if (i == s.length) {
+        return true
+    }
+    return false
+};
+
+console.log(isSubsequence('ace', 'abcde')) //true
+console.log(isSubsequence('aec', 'abcde')) //false
+
+
+//-----------------------------------------------------------------------------------
+
 // Palindrome example:
 const checkIfPalindrome = function(s) {
     let left = 0;
