@@ -79,6 +79,10 @@ for (let entry of priceMap.entries()) {
   //console.log(entry) // [ 'cucumber', 500 ][ 'lettuce', 350 ][ 'carrots', 50 ]
 }
 
+for (let [key, value] of priceMap.entries()) {
+  //console.log(key, value)//'cucumber', 500, 'lettuce', 350, 'carrots', 50
+}
+
 priceMap.forEach( (value, key, map) => {
   //console.log(value, key, map)
 })
