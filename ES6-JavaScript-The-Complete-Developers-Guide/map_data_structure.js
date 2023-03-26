@@ -236,3 +236,23 @@ console.log(mapSort4);
 // ])
 
 // console.log(new Map([...map].sort()))
+
+// Note on using Map like Objects --------------------------------------------------------------------------------------------------
+// Note you can use object syntax of map[arr[i]] BUT they will not be accessible with Map functions....
+// let test = (arr) => {
+//   let map = new Map()
+
+//   for (let i = 0; i < arr.length; i++) { //this will make an object with string keys which are unaccessable to Map functions
+//     if (!map[arr[i]]) {
+//       map[arr[i]] = 1
+//     } else {
+//       map[arr[i]] += 1
+//     }
+//   }
+//   map.set(12, 3)
+//   console.log('1', map.size) //size is 1 (because of the map.set() above)
+//   console.log('2', map[12]) // undefined
+//   console.log('3', map['10']) // 2
+// }
+
+// test([10,10,11,11,11,11,11])
