@@ -1,3 +1,4 @@
+/** 
 //logging out all of the elements in an array with recursion
 // let basicRecursion = (arr) => {
 //   if (!arr.length) {
@@ -7,8 +8,9 @@
 //   return basicRecursion(arr.slice(1))
 // }
 // basicRecursion([10,11,12,13])
+*/
 
-// USE THIS PATTERN! 
+// USE THIS HELPER PATTERN! IT'S MUCH EASIER TO UNDERSTAND!
 // Logging out all of the elements in an array with the helper pattern recursion
 
 let helperBasicRecursion = (arr) => {// Path 1
