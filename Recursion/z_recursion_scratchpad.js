@@ -16,3 +16,59 @@ let addOne = (arr) => {
 
 let x = addOne([10,20,30])
 console.log('x', x)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let z = (n) => {
+  let result = []
+
+  let helper = (n) => {
+    if (n === 0) {
+      return 
+    }
+    result.push(n)
+    let o = n - 1
+    helper(o)
+  }
+  helper(n)
+  return result
+}
+console.log(z(10))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
