@@ -25,6 +25,57 @@ export class BinaryTree {
       }
     }
   }
+
+  // Breadth First Search
+  breadthFirstSearch = function() {
+    let queue = [this.root];
+    let visited = [];
+    while (queue.length) {
+      let node = queue.shift();
+      visited.push(node.val);
+      if (node.left) {
+        queue.push(node.left);
+      }
+      if (node.right) {
+        queue.push(node.right);
+      }
+    }
+    return visited;
+  };
+
+  DFSPreOrder() {
+    let results = [];
+    function traverse(currentNode){
+      results.push(currentNode.val);
+      if (currentNode.left) traverse(currentNode.left);
+      if (currentNode.right) traverse(currentNode.right);
+    }
+    traverse(this.root);
+    return results;
+  }
+
+  DFSInOrder() {
+    let results = [];
+    function traverse(currentNode){
+      if (currentNode.left) traverse(currentNode.left);
+      results.push(currentNode.val);
+      if (currentNode.right) traverse(currentNode.right);
+    }
+    traverse(this.root);
+    return results;
+  }
+
+  DFSPostOrder() {
+    let results = [];
+    function traverse(currentNode){
+      if (currentNode.left) traverse(currentNode.left);
+      if (currentNode.right) traverse(currentNode.right);
+      results.push(currentNode.val);
+    }
+    traverse(this.root);
+    return results;
+  }
+
 }
 
 class Node {
