@@ -140,3 +140,31 @@ const minSubArrayLen = function(target, arr) {
 
 let testResult = minSubArrayLen(7, [2,3,1,2,4,3])
 console.log('testResult',testResult)
+
+// 5. Pattern to build up substrings, and reset the window as we check for longest. Like a rubber band
+// Leetcode problem: https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/925165247/
+var lengthOfLongestSubstring = function (s) {
+
+  let longestSubstring = 0;
+  let map = new Map(); 
+  let left = 0;
+
+  while (left < s.length) { 
+    let right = left; // set or reset 
+
+    while (right < s.length) { // inner loop to build up substring
+
+      if (map.has(s[right])) {
+        break; //already has? then exit loop. Then we will end up reseting the window above
+      } else {
+        map.set(s[right], right); //build the substring, and slide right by 1
+        right++; 
+      }
+      
+    }
+    longestSubstring = Math.max(longestSubstring, right - left); //after exiting inner loop, update longestSubstring
+    map.clear(); //erase the temp map
+    left++;
+  }
+  return longestSubstring
+}
