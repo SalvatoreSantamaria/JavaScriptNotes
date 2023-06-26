@@ -144,3 +144,52 @@ var minDepth = function(root) {
   dfs(root, 1)
   return min
 };
+
+// Univalued Tree https://leetcode.com/problems/univalued-binary-tree/-----------------------------------------------------------------------------------------------------------------------------
+
+// Pattern 1
+var isUnivalTree = function(root) {
+  let result = true
+  let unival = root?.val
+
+  function dfs(node) {
+      if (node.left && node.left.val !== null && node.left.val !== unival) {
+        result = false
+      } 
+      if (node.right && node.right.val !== null && node.right.val !== unival) {
+        result = false
+      } 
+
+      if (node.left && node.left.val === unival) {
+        dfs(node.left)
+      } 
+
+      if (node.right && node.right.val === unival) {
+        dfs(node.right)
+      } 
+  }
+  dfs(root)
+return result
+};
+
+
+// Pattern 2
+var isUnivalTree = function(root) {
+  let result = true
+  if (!root) return 
+  const dfs = (node) => {
+    
+    if (!node) return 
+
+    if (node.val !== root.val) {
+      result = false
+      return
+    }
+
+    dfs(node.left)
+    dfs(node.right)
+
+  }
+  dfs(root)
+  return result
+}
