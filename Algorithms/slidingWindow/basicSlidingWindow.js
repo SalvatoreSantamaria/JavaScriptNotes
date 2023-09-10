@@ -168,3 +168,39 @@ var lengthOfLongestSubstring = function (s) {
   }
   return longestSubstring
 }
+
+// 6. Two ways to do the same rubber banding: 
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock
+
+// Slow
+var maxProfit = function (prices) {
+  let l = 0
+  let result = 0
+  while (l < prices.length) {
+    let r = l
+    while (r < prices.length) {
+      if (prices[r] - prices[l] > result) {
+        result = prices[r] - prices[l]
+      } else {
+        r++
+      }
+    }
+    l++
+  }
+  return result
+}
+
+// Fast
+var maxProfit = function (prices) {
+  let l = 0
+  let r = 1
+  let result = 0
+    while (r < prices.length) {
+      if (prices[r] <= prices[l]) {
+        l = r
+      } 
+      result = Math.max(result, prices[r] - prices[l])
+      r++ 
+    }
+  return result
+}
