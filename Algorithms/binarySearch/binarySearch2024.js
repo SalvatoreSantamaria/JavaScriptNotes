@@ -6,25 +6,25 @@ I need to understand / implement the pattern
 
 
 // Binary Search
-var search = function (nums, target) {
-  let [left, right] = [0, nums.length - 1];
+var search = function(numbers, target) {
 
-  while (left <= right) {
-      const mid = (left + right) >> 1;
-      const guess = nums[mid];
-
-      const isTarget = guess === target;
-      if (isTarget) return mid;
-
-      const isTargetGreater = guess < target;
-      if (isTargetGreater) left = mid + 1;
-
-      const isTargetLess = target < guess;
-      if (isTargetLess) right = mid - 1;
-  }
-
-  return -1;
-};
+    // Make Two Pointers  
+    let lo = 0;
+    let hi = numbers.length - 1;
+  
+    
+    while (lo <= hi) {
+      const mid = Math.floor((lo + hi) / 2); // get mid point
+      if (target < numbers[mid]) {
+        hi = mid - 1; // move hi pointer down, use - 1 because we have already examined mid
+      } else if (target > numbers[mid]) {
+        lo = mid + 1; // move lo pointer up, use + 1 because we have already examined mid
+      } else {
+        return mid; // remember we need this in case it is mid
+      }
+    }
+    return -1; // return -1 false if not found
+  };
 
 
 // Search a 2D Matrix
@@ -93,6 +93,34 @@ var findMin = function (nums) {
     return nums[left]; // after we are out of the while loop, return the element at the index left, which represents the minimum element in the array.
 };
 
+// TO DO: I rewrote the solution in simpler code, re add the explanation
+var findMin = function (nums) {
+    let left = 0
+    let right =  nums.length - 1
+
+    while (left <= right) {
+        const mid = Math.floor((left + right)/2)
+
+        const leftNum = nums[left]
+        const rightNum = nums[right];
+
+        if (leftNum < rightNum) {
+         return leftNum;
+        }
+
+        if ( leftNum <= nums[mid]) {
+          left = mid + 1;
+        }
+
+        if (nums[mid] < leftNum) {
+          right = mid;
+        }
+    }
+
+    return nums[left];
+};
+
+
 // Search in Rotated Sorted Array
 var search = (nums, target) => {
     let [left, right] = [0, nums.length - 1];
@@ -134,3 +162,4 @@ var search = (nums, target) => {
 };
 
 // Time Based Key Value Store
+// This is creation via a class, skipping this style of problem
